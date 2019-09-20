@@ -78,5 +78,87 @@
             <dt>슬픈 문제</dt>
             <dd>쉬는 시간이 1시간이나 남았다.</dd>
         </dl>
+                <!-- strong, em <-> b, i -->
+                <strong>살려주세요</strong>
+                <em>졸려요</em>
+        
+                <b>이러고는못살아요</b>
+                <i>졸려죽겠어요</i>
+
+                <!-- ins 첨부글, del 삭제글 <-> u, strike (지금 잘 안씀) -->
+                <ins>박윤진은 이상해요</ins>
+                <del>김선경도 이상해요</del>
+                <u>근데 제일 이상한 건</u>
+                <strike>나예요</strike>
+
+                <!-- sup(superscript) 위에다 첨부하는 , sub(subscript) 아래에 첨부하는 -->
+                2<sup>2</sup> : 제곱수, 2의 2승
+                H<sub>2</sub>0 : 물의 화학식
+                
+                <img src="images/munji.png" width="100px"/>
+                <img src="./images/munji.png" width="100px"/>
+
+                <style>
+                        table, tr, td{
+                            border: solid 1px blue;
+                        }
+                
+                </style>
+                <!-- table 도표 -->
+                <!-- table, tr 행 한줄, td 열 한칸 -->
+                <!-- summary 요약/ caption 표제 - 사람이 보는거-->
+                <table summary="표의 요약, ex)학생명단">
+                    <caption>[표1] 표의 제목</caption>
+                    <!-- thead, tbody, tfoot-->
+                    <thead>
+                       <tr> <!-- th table header... 왜 td가 4개인데 th를 5개를 썼냐면 colspan으로 늘렷기 떄문임 ㅅㅂ -->
+                            <!-- scope = col, row -->
+                            <th scope="col">제목1</th>
+                            <th scope="col">제목2</th>
+                            <th scope="col">제목3</th>
+                            <th scope="col">제목4</th>
+                            <th scope="col">제목5</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- colspan 열 늘이기, rowspan 행 늘이기 -->
+                            <td colspan="2">오</td> <!-- 가로로 두칸 차지함... 다른 칸을 밀어버리면서 차지해버림.... 칸의 길이를 넓히는 게 아니라 칸 2개를 차지한다고 생각하면 됨 -->
+                            <td rowspan="2">늘</td> <!-- 세로로 두칸 차지함 마찬가지로 같은 원리 좀 지랄맞은 것 같음 이거-->
+                            <td>할</td>
+                            <td>일</td>
+                        </tr>
+                        <tr>
+                            <td>내</td>
+                            <td>일</td>
+                            <td>하</td>
+                            <td>기</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+                <style>
+                        table{
+                            border: 1px solid black;
+                        }
+                        td{
+                            border: 1px solid black;
+                        }
+                    </style>
+                    <table>
+                        <tr>
+                            <td colspan="3">up</td>
+                            <td rowspan="2">right</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">left</td>
+                            <td colspan="2">center</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">down</td>
+                        </tr>
+                    </table>
     </body>
 </html>
