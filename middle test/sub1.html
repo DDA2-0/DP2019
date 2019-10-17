@@ -1,0 +1,430 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>소개 페이지</title>
+        <meta charset="utf-8" />
+        <meta name="author" content="이다영" />
+        <meta name="keywords" content="HTML, 콘텐츠 프로그래밍, 계원" />
+        <meta name="subject" content="HTML Training" />
+        <meta name="descriptioin" content="콘텐츠 프로그래밍 중간고사" />
+        <meta name="copyright" content="이다영" />
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap&subset=korean" rel="stylesheet"/>
+        <style> 
+                #container{
+                    background: white;
+                    witdh: 720px
+                }
+                p {
+                    font-family: "Nanum Gothic", sans-serif;
+                    font-size: 23px;
+                  }
+                p.a {
+                    font-weight: 400;
+                    font-size: 16px;
+                    color:#ff61ac;
+                  }
+                p.aa {
+                    font-weight: 400;
+                    font-size: 16px;
+                    color:white;
+                  }
+                p.b {
+                    font-weight: 700;
+                    font-size: 18px;
+                    color:#ff61ac;
+                  }
+                p.c {
+                    font-weight: 800;
+                  }
+                p.d {
+                    font-weight: bold;
+                    color:#ff61ac;
+                  }
+                p.a5{
+                    color:#ff7bb9;
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+                #a1{
+                    color:#ff61ac;
+                    font-weight: bold;
+                    font-size:50px;
+                }
+                .a1{
+                    color:#ff7bb9;
+                    font-size: 20px;
+                }
+                .a2{
+                    color:#ff8fc3;
+                    font-size: 16px;
+                }
+                a:link{color: #ee1a7d;}    /* 기본 모습*/
+                a:visited{color: rgb(247, 2, 247);}  /* 방문 후 */
+                a:hover{color:gold;} /*마우스 올림*/
+                hr{color:#ff61ac;}
+                
+                .a3{
+                    color:#ff8fc3;
+                    font-size: 18px;
+                    }
+                .container2{
+                    background:#ff8fc3;
+                }
+                .a4{
+                    color:white;
+                    font-size: 15px;
+                }
+                .container3{
+                    background:#ffdaeb;
+                }
+                .border1{
+                border: 1px solid #ff61ac;
+                width: 100px;
+                height: 50px;
+                border-radius: 10px;
+                }
+        </style>
+        <style type="text/css">
+            .space{
+            height:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+                // <![CDATA[
+                var colours=new Array('#f00', '#f06', '#f0f', '#f6f', '#f39', '#f9c'); // colours of the hearts
+                var minisize=16; // smallest size of hearts in pixels
+                var maxisize=28; // biggest size of hearts in pixels
+                var hearts=66; // maximum number of hearts on screen
+                var over_or_under="over"; // set to "over" for hearts to always be on top, or "under" to allow them to float behind other objects
+                
+                /*****************************
+                *JavaScript Love Heart Cursor*
+                *  (c)2013+ mf2fm web-design *
+                *   http://www.mf2fm.com/rv  *
+                *  DON'T EDIT BELOW THIS BOX *
+                *****************************/
+                var x=ox=400;
+                var y=oy=300;
+                var swide=800;
+                var shigh=600;
+                var sleft=sdown=0;
+                var herz=new Array();
+                var herzx=new Array();
+                var herzy=new Array();
+                var herzs=new Array();
+                var kiss=false;
+                
+                if (typeof('addRVLoadEvent')!='function') function addRVLoadEvent(funky) {
+                var oldonload=window.onload;
+                if (typeof(oldonload)!='function') window.onload=funky;
+                else window.onload=function() {
+                    if (oldonload) oldonload();
+                    funky();
+                }
+                }
+                
+                addRVLoadEvent(mwah);
+                
+                function mwah() { if (document.getElementById) {
+                var i, heart;
+                for (i=0; i<hearts; i++) {
+                    heart=createDiv("auto", "auto");
+                    heart.style.visibility="hidden";
+                    heart.style.zIndex=(over_or_under=="over")?"1001":"0";
+                    heart.style.color=colours[i%colours.length];
+                    heart.style.pointerEvents="none";
+                    if (navigator.appName=="Microsoft Internet Explorer") heart.style.filter="alpha(opacity=75)";
+                    else heart.style.opacity=0.75;
+                    heart.appendChild(document.createTextNode(String.fromCharCode(9829)));
+                    document.body.appendChild(heart);
+                    herz[i]=heart;
+                    herzy[i]=false;
+                }
+                set_scroll();
+                set_width();
+                herzle();
+                }}
+                
+                function herzle() {
+                var c;
+                if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
+                    ox=x;
+                    oy=y;
+                    for (c=0; c<hearts; c++) if (herzy[c]===false) {
+                    herz[c].firstChild.nodeValue=String.fromCharCode(9829);
+                    herz[c].style.left=(herzx[c]=x-minisize/2)+"px";
+                    herz[c].style.top=(herzy[c]=y-minisize)+"px";
+                    herz[c].style.fontSize=minisize+"px";
+                    herz[c].style.fontWeight='normal';
+                    herz[c].style.visibility='visible';
+                    herzs[c]=minisize;
+                    break;
+                    }
+                }
+                for (c=0; c<hearts; c++) if (herzy[c]!==false) blow_me_a_kiss(c);
+                setTimeout("herzle()", 40);
+                }
+                
+                document.onmousedown=pucker;
+                document.onmouseup=function(){clearTimeout(kiss);};
+                
+                function pucker() {
+                ox=-1;
+                oy=-1;
+                kiss=setTimeout('pucker()', 100);
+                }
+                
+                function blow_me_a_kiss(i) {
+                herzy[i]-=herzs[i]/minisize+i%2;
+                herzx[i]+=(i%5-2)/5;
+                if (herzy[i]<sdown-herzs[i] || herzx[i]<sleft-herzs[i] || herzx[i]>sleft+swide-herzs[i]) {
+                    herz[i].style.visibility="hidden";
+                    herzy[i]=false;
+                }
+                else if (herzs[i]>minisize+2 && Math.random()<.5/hearts) break_my_heart(i);
+                else {
+                    if (Math.random()<maxisize/herzy[i] && herzs[i]<maxisize) herz[i].style.fontSize=(++herzs[i])+"px";
+                    herz[i].style.top=herzy[i]+"px";
+                    herz[i].style.left=herzx[i]+"px";
+                }
+                }
+                
+                function break_my_heart(i) {
+                var t;
+                herz[i].firstChild.nodeValue=String.fromCharCode(9676);
+                herz[i].style.fontWeight='bold';
+                herzy[i]=false;
+                for (t=herzs[i]; t<=maxisize; t++) setTimeout('herz['+i+'].style.fontSize="'+t+'px"', 60*(t-herzs[i]));
+                setTimeout('herz['+i+'].style.visibility="hidden";', 60*(t-herzs[i]));
+                }
+                
+                document.onmousemove=mouse;
+                function mouse(e) {
+                if (e) {
+                    y=e.pageY;
+                    x=e.pageX;
+                }
+                else {
+                    set_scroll();
+                    y=event.y+sdown;
+                    x=event.x+sleft;
+                }
+                }
+                
+                window.onresize=set_width;
+                function set_width() {
+                var sw_min=999999;
+                var sh_min=999999;
+                if (document.documentElement && document.documentElement.clientWidth) {
+                    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+                    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+                }
+                if (typeof(self.innerWidth)=='number' && self.innerWidth) {
+                    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+                    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+                }
+                if (document.body.clientWidth) {
+                    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+                    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+                }
+                if (sw_min==999999 || sh_min==999999) {
+                    sw_min=800;
+                    sh_min=600;
+                }
+                swide=sw_min;
+                shigh=sh_min;
+                }
+                
+                window.onscroll=set_scroll;
+                function set_scroll() {
+                if (typeof(self.pageYOffset)=='number') {
+                    sdown=self.pageYOffset;
+                    sleft=self.pageXOffset;
+                }
+                else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+                    sdown=document.body.scrollTop;
+                    sleft=document.body.scrollLeft;
+                }
+                else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+                    sleft=document.documentElement.scrollLeft;
+                    sdown=document.documentElement.scrollTop;
+                }
+                else {
+                    sdown=0;
+                    sleft=0;
+                }
+                }
+                
+                function createDiv(height, width) {
+                var div=document.createElement("div");
+                div.style.position="absolute";
+                div.style.height=height;
+                div.style.width=width;
+                div.style.overflow="hidden";
+                div.style.backgroundColor="transparent";
+                return (div);
+                }
+            </script>
+        <header>
+            <h2 id="target1"></h2>                
+            <a href="main.html">
+                <img src="image/image2.jpg" width="400px"/>
+                <img src="image/image20.jpg"/>
+            </a>
+            <embed align="right">
+                <audio controls >
+                  <source src="media/Lovable_Clown_Sit_Com.mp3" type="audio/mpeg" />
+                </audio>
+                <img src="image/image19.jpg"/>
+            </embed>
+            <p align="right"><input type="text" placeholder="아이디를 입력하세요." />
+                <input type="password" placeholder="패스워드를 입력하세요." />
+                <input type="button" value="로그인" /> <a href="form.html"><input type="button" value="회원가입" /></a>
+                <input type="button" value="아이디/비밀번호 찾기" />
+            </p>
+            <hr />
+            <nav align="right">
+                <a href="main.html"><img src="image/ㅇ.png" width="130px" /></a>
+                <a href="sub1.html"><img src="image/image8.jpg"  width="130px" /></a>
+                <a href="sub2.html"><img src="image/image9.jpg"  width="130px" /></a>
+                <a href="sub3.html"><img src="image/image10.jpg"  width="130px" /></a>
+                <a href="sub4.html"><img src="image/review copy.png" width="130px" /></a>
+                <a href="http://bit.ly/2lwY7zr" target="_blank"><img src="image/image7.jpg"  width="130px" /></a>
+                <a href="https://seouldessert.com" target="_blank"><img src="image/image4.jpg"  width="130px" /></a>
+            </nav>
+            <hr />
+        </header>
+        <center>
+            <div class="space">
+                <br />
+                <br />
+                <div id="target1"><img src="image/image8.jpg" width="160px"/></div>
+                <br />
+                    <img src="image/image12.jpg" width="720px"/>
+                <br />
+                <p class="a">서디페는 북팔코믹스에서 2016년 3월 27일부터 매달 토, 일 양일로 진행해오고 있는 국내 최대 디저트&수공예 행사입니다.</p>
+                <br />
+                <p class="a">일시 : 2019년 10월 19일 (토) ~ 2019년 10월 20일 (일)</p>
+                <p class="a">장소 : 일산 킨텍스 2전시장 9홀 (2층)</p>
+                <p class="a">주소 : 경기 고양시 일산서구 킨텍스로 217-60</p>
+                <br/>
+                <p class="a">1부 행사 > 12:00-14:30</p>
+                <p class="a">휴식 시간 > 브레이크 타임 1시간</p>
+                <p class="a">2부 행사 > 15:30-18:00</p>
+                <br/>
+                <p class="a">* 브레이크 타임 적용 (브레이크 타임에는 종일권을 제외한 1부 참관객 모두 전시장을 퇴장합니다.)</p>
+                <br/>
+                <p class="a">주차안내 : 티켓소지시 최초 30분 1,500원 / 일일 12,000원</p>
+                <p class="a">자세한 안내 : <a href="http://bit.ly/2lubhgu">http://bit.ly/2lubhgu</a></p>
+                <br />
+                <img src="image/about1.jpg" />
+                <br />
+                <p class="a">현장판매 : 티켓 현장판매도 하고 있습니다. - 1부, 2부 현장판매가는 5,000원입니다.</p>
+                <p class="a">물품보관 : 행사장내에는 물품보관소가 운영되지 않습니다.</p>
+                <br />
+                <p class="a">* 이벤트 티켓 일자, 시간 변경 절대 불가합니다.</p>
+                <p class="a"> (서울디저트페어 앱 내 티켓 조회는 방문 행사 당일 아침에 가능)</p>
+                <p class="a"> 확인이 어려울 시 현장 매표소에서 성함, 연락처로도 조회 가능합니다.</p>
+                <br />
+                <p class="a">* 참고사항</p>
+                <p class="a">사전 대기인원수에 따라 입장 대기줄을 설 수 있습니다.</p>
+                <p class="a">브레이크 타임에는 전시관 입출구가 통제됩니다. </p>
+                <p class="a">종일권 예매자의 경우, 1부 종료 30분전 행사장에 방문해 주셔야 브레이크 타임에 대기줄을 서지 않으실 수 있습니다.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.bookpalcomics.single.festival"><img src="image/about2.jpg"/></a>                <br />
+                <img src="image/about3.jpg" />
+                <br />
+                <details>
+                    <summary><img src="image/click1.png" /></summary>
+                    <img src="image/about5.jpg" />
+                </details>
+                <br />
+                <a href="#target1"><img src="image/image19.png" width="100px" /></a>
+                <footer>  
+                        <div class="container2">
+                            <table>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p class="aa">회사소개</p>
+                                    </td>
+                                    <td>
+                                        <a href="join1.html" target="_blank">
+                                            <p class="aa">이용약관</p>
+                                        </a>
+                                    </td>
+                                    <td width="50px">&nbsp;</td>
+                                    <td>
+                                        <p class="aa">개인정보 처리방침</p>
+                                    </td>
+                                    <td width="50px">&nbsp;</td>
+                                    <td>
+                                        <p class="aa">고객센터</p>
+                                    </td>
+                                    <td width="200px"></td>
+                                    <td>
+                                        <p class="aa">(주)북팔코믹스</p>
+                                    </td>
+                                    <td width="100px"></td>
+                                    <td>
+                                        <p class="aa">문의</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="aa">서디페 앱 다운로드</p>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <p class="aa">서디페 SNS</p>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td rowspan="2">
+                                        <img src="image/QR.png" width="70px" />
+                                    </td>
+                                    <td>
+                                        <a href="https://itunes.apple.com/kr/app/%EC%84%9C%EC%9A%B8%EB%94%94%EC%A0%80%ED%8A%B8%ED%8E%98%EC%96%B4/id1189026874?mt=8">
+                                            <img src="image/qr2.png" width="70px" />
+                                        </a>
+                                    </td>
+                                    <td width="100px"></td>
+                                    <td>
+                                        <a href="https://play.google.com/store/apps/details?id=com.bookpalcomics.single.festival">
+                                            <img src="image/sns1.png" width="20px" />
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="https://www.facebook.com/dessertfair">
+                                            <img src="image/sns2.png" width="20px" />
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="https://twitter.com/sdf_event">
+                                            <img src="image/sns3.png" width="20px" />
+                                        </a>
+                                    </td>
+                                    <td width="625px"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="image/qr3.png" width="70px" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="aa"> copyright (c) Lee Dayoung. All Rights Reversed.</p>
+                            <br />
+                        </div>
+                </footer>   
+            </div>    
+        </center>
+    </body>
+</html>

@@ -13,21 +13,21 @@
                 background: white;
                 witdh: 600px
             }
-            #a1{
+            .a1{
                 font-size: 20px; /*글씨크기*/
                 color: blue; /*글씨 색깔*/
                 font-weight: bold; /*글씨 두께*/
             }
-            #a2{
+            .a2{
                 font-size: 12px;
                 color: gray;
                 text-decoration: underline; /*글씨 꾸밈*/
             }
-            #a3{
+            .a3{
                 font-size: 12px;
                 color: gray;
             }
-            #a5{
+            .a5{
                 font-size: 14px;
                 color: gray;
             }
@@ -48,24 +48,24 @@
                                 border: 1px solid black;
                                 width: 700px;
                             }
-                            #a4{
+                            .a4{
                                 border: 1px solid black;
                             }
                     </style>
                         <table>
                         <tread>
                             <tr>
-                                <td id="a4" colspan="4"><h3 align="center">기본정보</h3></td>
+                                <td class="a4" colspan="4"><h3 align="center">기본정보</h3></td>
                             </tr>
                             <tr>
                                 <td><label for="id">아이디</label></td>
                                 <td><input name="id" placeholder="아이디를 입력하세요."/></td>
-                                <td><label id="a2">영문소문자/숫자, 4~16자 </label></td>
+                                <td><label class="a2">영문소문자/숫자, 4~16자 </label></td>
                                 <td><input type="button" value="중복확인" onclick="alert('사용 가능한 아이디 입니다.')" /> </td>
                             </tr>
                                 <td><label for="password">비밀번호</label></td>
                                 <td><input type="password" placeholder="패스워드를 입력하세요." /></td>
-                                <td><label id="a2">영문 대소문자/숫자/특수문자 중 3가지 이상 조합, 8자~16자</label></td>
+                                <td><label class="a2">영문 대소문자/숫자/특수문자 중 3가지 이상 조합, 8자~16자</label></td>
                             <tr>
                                 <td><label for="password">비밀번호 확인</label></td>
                                 <td><input type="password" placeholder="패스워드를 다시 입력하세요." /></td>
@@ -122,7 +122,7 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td id="a4" colspan="4"><h3 align="center">추가정보</h3></td>
+                                    <td class="a4" colspan="4"><h3 align="center">추가정보</h3></td>
                                 </tr>
                                 <tr>
                                     <td>생년월일</td>
@@ -148,17 +148,17 @@
                             </tread>
                         </table>
                         <p>이용약관 및 개인정보수집 및 이용,쇼핑정보 수신(선택)에 모두 동의합니다.</p>
-                        <p> <label id="a5">[필수] 이용약관 동의</label> <input type="button" value="내용확인"> 
-                            <label id="a3">동의합니다. </label><input type="radio" name="bt1" />
-                            <label id="a3"> 동의하지 않습니다.</label><input type="radio" name="bt1" /></p>
-                            <p><label id="a5">[필수] 개인정보 수집 및 이용 동의 </label><input type="button" value="내용확인"> 
-                                <label id="a3">동의합니다. </label><input type="radio" name="bt2" />
-                                <label id="a3"> 동의하지 않습니다.</label><input type="radio" name="bt2" /></p>  
-                                <p><label id="a5">[선택] 쇼핑정보 수신 동의 </label> <input type="button" value="내용확인"> 
-                                    <label id="a3">동의합니다. </label><input type="radio" name="bt3" />
-                                    <label id="a3"> 동의하지 않습니다.</label><input type="radio" name="bt3" /></p>    
-                                    <p><label id="a5">SMS 수신을 동의하십니까?</label><input type="checkbox" /></p>      
-                                    <p><label id="a5">이메일 수신을 동의하십니까?</label><input type="checkbox" /></p>
+                        <p> <label class="a5">[필수] 이용약관 동의</label> <input type="button" value="내용확인"> 
+                            <label class="a3">동의합니다. </label><input type="radio" name="bt1" />
+                            <label class="a3"> 동의하지 않습니다.</label><input type="radio" name="bt1" /></p>
+                            <p><label class="a5">[필수] 개인정보 수집 및 이용 동의 </label><input type="button" value="내용확인"> 
+                                <label class="a3">동의합니다. </label><input type="radio" name="bt2" />
+                                <label class="a3"> 동의하지 않습니다.</label><input type="radio" name="bt2" /></p>  
+                                <p><label class="a5">[선택] 쇼핑정보 수신 동의 </label> <input type="button" value="내용확인"> 
+                                    <label class="a3">동의합니다. </label><input type="radio" name="bt3" />
+                                    <label class="a3"> 동의하지 않습니다.</label><input type="radio" name="bt3" /></p>    
+                                    <p><label class="a5">SMS 수신을 동의하십니까?</label><input type="checkbox" /></p>      
+                                    <p><label class="a5">이메일 수신을 동의하십니까?</label><input type="checkbox" /></p>
 
                                     <input type="submit" value="제출"/>
         </form>
