@@ -1,0 +1,89 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <title>콘텐츠 프로그래밍 사이트</title>
+        <!-- euc-kr, utf-8 한글 인코딩!!!!-->
+        <meta charset="utf-8" />
+        <style>
+            #wrap{
+                /*width: 1100px; */ /* 고정값 */
+                min-width: 1024px; /*최소 넓이 */
+                max-width: 1920px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #main_visual{
+                /* height:600px; */
+                background-image: url("last test/images/index.jpg");
+                background-size: 100% 100%; /* 가로 세로 */
+                background-size: cover;
+                background-repeat: no-repeat;
+                /* repeat, no-repeat, repeat-x, repeat-y */
+                background-color: black;
+                /*background-position: 50% 50%; /*가로 세로*/
+
+                color: white; /* 상속 */
+                text-align: left;
+                padding: 500px 0px; /*상하좌우*/
+            }
+            #main_visual h3{
+                margin : 350px 0px 50px 50px;
+            }
+            #main_visual button{
+                margin: 0px 0px 0px 15px;
+                padding: 10px 0px;
+            }
+            a:link{color: #3c643b;}    /* 기본 모습*/
+            a:visited{color: rgb(92, 170, 109);}  /* 방문 후 */
+            a:hover{color:rgb(255, 232, 98);} /*마우스 올림*/
+            header{
+                background-color:#4b7543;
+                color: white;
+                padding: 10px 50px;
+            }
+            header>nav>ul>li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px;
+            }
+            .float_left{ float:left;}
+            .float_right{ float:right;}
+            .clear { clear:both; height:0; overflow:hidden;}
+
+            #logo_back{
+                color:#9bca4e;
+            }
+            header>h1{
+                margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <h1 class="float_left">
+                    <span id="logo_back">SE </span><span>SO NEON</span>
+                    <!-- div span 의미없이 구획나누기 좋음-->
+                </h1>
+                <nav class="float_right">
+                    <ul>
+                       <li>MAIN</li>
+                        <li>PROFILE</li>
+                        <li>ALBUM</li>
+                        <li>So!YoON!</li>
+                       <div class="clear"></div>
+                    </ul>
+                </nav>
+                <div class="clear"></div>
+            </header>
+            <div id="main_visual">
+                <h1> SE SO NEON Web Site </h1>
+                <button onclick="window.location.href='last_test/main.html'">MAIN</button>
+                <button href="last test/layout1.html">PROFILE</a></button>
+                <button href="last_test/layout2.html">ALBUM</a></button>
+                <button><a href="form.html">So!YoON!</a></button>
+            </div>
+        </div>
+    </body>
+    <footer></footer>
+</html>
