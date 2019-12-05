@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>layout2</title>
+        <title>layout3</title>
         <meta charset="utf-8" />
         <style>
-            #header2{
-                background-color:#02918c;
-                color: white;
-                padding: 10px 50px;
-            }
             #logo_back{
                 color:#cfc91d;
             }
@@ -27,29 +22,16 @@
                 background-color:#4b7543;
                 color: white;
                 padding: 20px 50px;
-            }
-            header>h1{
                 margin: 0px;
             }
-            #main_visual{
-                /* height:600px; */
-                background-image: url("images/layout2_visual.jpg");
-                background-size: 100% auto; /* 가로 세로 */
-                background-size: cover; /*이거 개많이 씀*/
-                background-repeat: no-repeat;
-                /* repeat, no-repeat, repeat-x, repeat-y */
-                background-color: black;
-                background-position: 50% 50%; /*가로 세로*/
-
-                color: white; /* 상속 */
-                text-align: center;
-                padding: 100px 0px; /*상하좌우*/
+            #header>h1{
+                margin: 0px;
             }
-            #main_visual h2{
-                font-size: 40px;
-                font-weight: lighter;
-                letter-spacing: 15px;
-                margin: 5px;
+            #header2>h1{
+                margin:0px;
+                color: gray;
+                font-size: 60px;
+                font-weight: bold;
             }
             #visual_title_top{
                 font-size: 20px;
@@ -62,8 +44,7 @@
             }
             section{
                 text-align: center;
-                /*padding: 0px 100px; /*상하 좌우 내부여백*/
-                display: block  ;
+                padding: 0px 100px; /*상하 좌우 내부여백*/
             }
             section h3{
                 color: #02918c;
@@ -98,15 +79,8 @@
                 float:left;
                 list-style: none;
                 width: 25%;
-                margin: 0px;
-                padding: 0px;
             }
             #work_list{
-                padding: 0px;
-            }
-            #work_list ul{
-                position: relative;
-                overflow: auto;
                 padding: 0px;
             }
             #work_list img{
@@ -119,6 +93,16 @@
                 max-width: 1920px;
                 margin-left: auto;
                 margin-right: auto;
+            }
+            #wrap2{
+                /*width: 1100px; */ /* 고정값 */
+                min-width: 1024px; /*최소 넓이 */
+                max-width: 1920px;
+                margin-top: 0px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 70px;
+                text-align: center;
             }
             html{
                 scroll-behavior: smooth;
@@ -136,11 +120,98 @@
                 float:left;
                 list-style : none;
                 padding-right: 10px;
+                padding-right: 10px;
             }
 
             nav>ul{
                 margin-top: 10px;
                 margin-bottom: 10px;
+                display: block;
+                list-style-type: disc;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 40px;
+            }
+            body{
+            background-image: url("images/Layout3_back.jpg");
+            }
+            header li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px;
+                padding: 0px 20px 0px 0px;
+            }
+            header ul{
+                padding: 0px;
+            }
+            .clear { clear:both; height:0; overflow:hidden; }
+            .float_left{ float: left; } /* 공간이 넉넉하면 가로로 나열되지만 공간이 부족하면 후순위부터 내려가게 됨*/
+            .float_right{ float: right;}
+            .short_line{
+                border-bottom: solid 1px rgb(71, 67, 78);
+                width: 35px;
+            }
+            .short-line{
+                border-bottom: solid 1px gray;
+                width: 35px;
+                margin: 10px 0px;
+                display: block;
+                list-style-type: disc;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 40px;
+            }
+            .long-line{
+                border-bottom: solid 1px gray;
+                width: 70px;
+            }
+            .card{
+                background-color: white;
+                border-right: solid 1px gray;
+                border-bottom: solid 1px gray;
+                width: 310px;
+            }
+            .card dd{
+                margin: 0px;
+                font-size: 11px;
+            }
+            .card dt{
+                font-weight: bold;
+            }
+            .card .category{
+                background-color: black;
+                color: white;
+                /*width로 넓이 조절하지 않음*/
+                display: block; /*표시방식 : 블록*/
+                display: inline-block; /*인라인과 블록 절충*/
+                padding: 5px;
+                padding: 2px 5px 5px 5px;
+
+                position: static; /*위치 : 정적인 (기본형)*/
+                position: absolute; /*절대적인*/
+                bottom: 0px;
+                left: 0px;
+                /*top left right bottom*/
+            }
+            .visual{
+                position: static; /*옛 명령이라 무시됨*/
+                position: relative; /*관계형*/
+                /*relaive 부모는 absolute 자식의 기준점이 됨*/
+            }
+            .visual img{
+                display: inline-block; /*표시:인라인-블록*/
+                /*이 경우 소문자 pjgy등을 표시할 밑공간 필요*/
+                display: block;
+            }
+            .info{
+                padding:20px;
+            }
+            #contents li{
+                float:left;
+                list-style: none;
+                margin: 30px;
             }
         </style>
         <style type="text/css">
@@ -216,96 +287,31 @@
                 <div class="clear"></div>
             </header>
         </div>
-        <div id="wrap">
-            <header id="header2">
-                <h1 class="float_left">
-                    <span>MY</span><span id="logo_back">FOLIO</span>
-                    <!-- div span 의미없이 구획나누기 좋음-->
-                </h1>
-                <nav class="float_right">
-                    <ul>
-                       <li>HOME</li>
-                        <li>ABOUT ME</li>
-                        <li>SERVICE</li>
-                        <li>MY WORK</li>
-                       <li>CONTACT ME</li>
-                       <div class="clear"></div>
-                    </ul>
-                </nav>
-                <div class="clear"></div>
-            </header>
-            <div id="main_visual">
-                <div id="visual_title_top">Lorem ipsum dolor sit iusmod tempor</div>
-                <h2>INCIDIDUNT BORE</h2>
-                <div id="visual_title_bottom">Orem ipsum dolor sit amet, consectetur</div>
-                <img src="images/layout2_button.jpg" />
-            </div>
-            <section>
-                <h3>ABOUT ME</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                    nisi ut aliquip ex ea commodo consequat duis aute irure dolor.
-                </p>
-                <ul id="about_list">
-                    <li>
-                        <img src="images/layout2_icon1.jpg" />
-                        <dl>
-                            <dt>Title goes here</dt>
-                            <dt>onsectetur adipisicing elit, 
-                                sedo eiusmod tempor incidi 
-                                et dolorerserss eerhfre mag.</dt>
-                        </dl>
-                    </li>
-                    <li>
-                            <img src="images/layout2_icon2.jpg" />
-                            <dl>
-                                <dt>Title goes here</dt>
-                                <dt>onsectetur adipisicing elit, 
-                                    sedo eiusmod tempor incidi 
-                                    et dolorerserss eerhfre mag.</dt>
-                            </dl>
-                    </li>
-                    <li>
-                            <img src="images/layout2_icon3.jpg" />
-                            <dl>
-                                <dt>Title goes here</dt>
-                                <dt>onsectetur adipisicing elit, 
-                                    sedo eiusmod tempor incidi 
-                                    et dolorerserss eerhfre mag.</dt>
-                            </dl>
-                    </li>
-                    <li>
-                            <img src="images/layout2_icon4.jpg" />
-                            <dl>
-                                <dt>Title goes here</dt>
-                                <dt>onsectetur adipisicing elit, 
-                                    sedo eiusmod tempor incidi 
-                                    et dolorerserss eerhfre mag.</dt>
-                            </dl>
-                    </li>
-                    <div class="clear"></div>
-                </ul>
-            </section>
-            <section>
-                <h3>MY WORKS</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.
-                </p>
-                <ul id="work_list">
-                    <li><img src="images/layout2_pic1.jpg" /></li>
-                    <li><img src="images/layout2_pic2.jpg" /></li>
-                    <li><img src="images/layout2_pic3.jpg" /></li>
-                    <li><img src="images/layout2_pic4.jpg" /></li>
-                    <li><img src="images/layout2_pic5.jpg" /></li>
-                    <li><img src="images/layout2_pic6.jpg" /></li>
-                    <li><img src="images/layout2_pic7.jpg" /></li>
-                    <li><img src="images/layout2_pic8.jpg" /></li>
-                    <div class="clear"></div>
-                </ul>
-            </section>
+        <div id="wrap2">
+            <script type="text/javascript">
+                var div = document.createElement("div");
+                document.body.appendChild(div);
+                div.style.fontFamily = "monospace";
+                div.style.textAlign = "center";
+                div.style.fontSize = "70px";
+
+                function Happy(ms) {
+                    this.anim = [".(^-^)'","-(^-^)-","'(^-^).","-(^o^)-",".(^-^)'","-(^-^)-","'(^-^).","-(^-^)-"];
+                    var anim = this.anim;
+                    var currentFrame = 0;
+                    this.animLoop = setInterval(function() {
+                    div.innerText = "\n\n" + anim[currentFrame];
+                    currentFrame++;
+                    if(currentFrame >= anim.length) currentFrame = 0;
+                  }, ms);
+                }
+
+                    var a1 = new Happy(100);
+            </script>
+            <p>중간고사 때는 무작정 많이 넣기 급하다는 느낌이 강했는데,</p>
+            <p>기말수업에서는 용도에 맞는 태그에 대해 알게 되고 제대로 활용할 수 있어 좋았습니다.</p>
+            <p>수업시간에 레이아웃 실습을 했던 것이 큰 도움이 된 것 같습니다.</p>
+            <p>프로그래밍을 재미있게 가르쳐주셔서 감사합니다.</p>
         </div>
         <footer>
             <div id="footer">
