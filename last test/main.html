@@ -4,7 +4,7 @@
         <title>MAIN</title>
         <!-- euc-kr, utf-8 한글 인코딩!!!!-->
         <meta charset="utf-8" />
-        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet"/>
         <style>
             html{
                 scroll-behavior: smooth;
@@ -105,8 +105,10 @@
                 padding: 20px 220px;
             }
             #section1 table{
-                align-content: center;
-                margin: 40px 0px 20px 0px;
+                position: relative;
+                /* margin: 40px 0px 20px 0px;*/
+                margin: auto;
+                left:0, top:0, right:0, bottom:0;
             }
             #section1 p{
                 padding: 5px 0px;
@@ -247,14 +249,26 @@
                 transform: translateX(0px);
                 opacity: 1;
             }
-
             #point1{
                 font-weight: bold;
                 font-size: 14px;
                 color: rgb(243, 243, 243);
             }
+            #point2{
+                font-weight: bold;
+                font-size: 18px;
+                color: rgb(243, 243, 243);
+            }
             #td1{
                 padding: 0px 70px 0px 30px;
+            }
+            #profile{
+                position: relative;
+                margin: auto;
+                left:0, top:0, right:0, bottom:0;
+            }
+            #profile p{
+                position: relative;
             }
         </style>
         <style type="text/css">
@@ -492,7 +506,7 @@
                         </a>
                       </li>
                     </ul>
-                  </nav>
+            </nav>
             <div id="main_visual">
                 <img src="images/Untitled.png" style="max-width: 100%; height: auto;"/>
             </div>
@@ -509,50 +523,52 @@
                         <td><img src="images/0000286722_001_20171023174444093.jpg" width="430px"/></td>
                     </tr>
                 </table>
-                <p>밴드 <span id="point1">'새소년'</span>은 황소윤 (보컬/기타), 유수 (드럼), 박현진 (베이스)로 이뤄진 3인조 밴드다. 우연히 본 오래된 잡지의 제목이 그대로 밴드의 이름이 되었다. </p>
-                <p>그렇게 지어진 ‘새소년’의 ‘새’는 <span id="point1">‘새로움’</span>을 의미하기도, <span id="point1">‘날아다니는 새’</span>를 의미하기도 한다.</p>
-                <p><span id="point1">로우파이한 질감, 빈티지한 느낌,</span> 그리고 블루스/사이키델릭 록/신스팝 등 <span id="point1">여러 스타일을 관통하는 넓은 음악적 스펙트럼.</span> 이런 것들이 모이고 섞여 ‘새소년스러움’이 된다.</p>
-                <h3>새 소 년</h3>
-                <hr/>
-                <p>2016년에 결성하여 2017년 6월 싱글 [긴 꿈]으로 데뷔, 같은 해 10월 EP [여름깃]을 발매하면서 1년만에 한국의 인디 음악을 대표하는 밴드가 되었다. </p>
-                <p>한국대중음악상 '올해의 신인'과 '최우수 록 노래'를 수상하며 최고의 데뷔 첫 해를 보낸 새소년은 각종 미디어의 주목을 받으면서 이름을 알리기 시작했고,</p>
-                <p>미국, 캐나다, 독일, 대만 등 10여개국의 페스티벌에서 초청을 받으며 국내를 넘어 세계 무대에서의 가능성도 인정받기 시작했다.</p>
-                <p>본 싱글 [집에]는 새소년이 1년 4개월 만에 선보이는 신곡. 이어 11월에는 새 앨범을 발매할 예정이며 12월에는 단독 공연을 예정하고 있다.</p>
-                <h4>Member</h4>
-                <hr/>
-                <table>
-                    <tr>
-                        <td>
+                <div id="profile">
+                    <p>밴드 <span id="point1">'새소년'</span>은 황소윤 (보컬/기타), 유수 (드럼), 박현진 (베이스)로 이뤄진 3인조 밴드다. 우연히 본 오래된 잡지의 제목이 그대로 밴드의 이름이 되었다. </p>
+                    <p>그렇게 지어진 ‘새소년’의 ‘새’는 <span id="point1">‘새로움’</span>을 의미하기도, <span id="point1">‘날아다니는 새’</span>를 의미하기도 한다.</p>
+                    <p><span id="point1">로우파이한 질감, 빈티지한 느낌,</span> 그리고 블루스/사이키델릭 록/신스팝 등 <span id="point1">여러 스타일을 관통하는 넓은 음악적 스펙트럼.</span> 이런 것들이 모이고 섞여 ‘새소년스러움’이 된다.</p>
+                    <h3>새 소 년</h3>
+                    <hr/>
+                    <p>2016년에 결성하여 2017년 6월 싱글 [긴 꿈]으로 데뷔, 같은 해 10월 EP [여름깃]을 발매하면서 1년만에 한국의 인디 음악을 대표하는 밴드가 되었다. </p>
+                    <p>한국대중음악상 '올해의 신인'과 '최우수 록 노래'를 수상하며 최고의 데뷔 첫 해를 보낸 새소년은 각종 미디어의 주목을 받으면서 이름을 알리기 시작했고,</p>
+                    <p>미국, 캐나다, 독일, 대만 등 10여개국의 페스티벌에서 초청을 받으며 국내를 넘어 세계 무대에서의 가능성도 인정받기 시작했다.</p>
+                    <p>본 싱글 [집에]는 새소년이 1년 4개월 만에 선보이는 신곡. 이어 11월에는 새 앨범을 발매할 예정이며 12월에는 단독 공연을 예정하고 있다.</p>
+                    <h4>Member</h4>
+                    <hr/>
+                    <table>
+                        <tr>
+                            <td>
                             <img src="images/profile1.jpg"/>
-                        </td>
-                        <td id="td1">
-                            <p><span id="point1">황소윤 (黃昭允 , Hwang Soyoon)</span></p>
-                            <p>1997년 5월 23일</p>
-                            <p>새소년  |  보컬, 기타</p>
-                            <p>붕가붕가레코드, 매직스트로베리사운드 소속</p>
-                        </td>
-                        <td>
-                            <img src="images/profile2.jpg" />
-                        </td>
-                        <td id="td1">
-                            <p><span id="point1">유수 (U Su)</span></p>
-                            <p>199?년 01월 05일</p>
-                            <p>새소년  |  드러머</p>
-                            <p>붕가붕가레코드, 매직스트로베리사운드 소속</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="images/profile3.jpg"/>
-                        </td>
-                        <td id="td1">
-                            <p><span id="point1">박현진 (Park Hyunjin)</span></p>
-                            <p>1996년 09월 06일</p>
-                            <p>새소년  |  베이스</p>
-                            <p>붕가붕가레코드, 매직스트로베리사운드 소속</p>
-                        </td>
-                    </tr>
-                </table>
+                            </td>
+                            <td id="td1">
+                                <p><span id="point1">황소윤 (黃昭允 , Hwang Soyoon)</span></p>
+                                <p>1997년 5월 23일</p>
+                                <p>새소년  |  보컬, 기타</p>
+                                <p>붕가붕가레코드, 매직스트로베리사운드 소속</p>
+                            </td>
+                            <td>
+                                <img src="images/profile2.jpg" />
+                            </td>
+                            <td id="td1">
+                                <p><span id="point1">유수 (U Su)</span></p>
+                                <p>199?년 01월 05일</p>
+                                <p>새소년  |  드러머</p>
+                                <p>붕가붕가레코드, 매직스트로베리사운드 소속</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/profile3.jpg"/>
+                            </td>
+                            <td id="td1">
+                                <p><span id="point1">박현진 (Park Hyunjin)</span></p>
+                                <p>1996년 09월 06일</p>
+                                <p>새소년  |  베이스</p>
+                                <p>붕가붕가레코드, 매직스트로베리사운드 소속</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </section>
             <section id="section2">
                 <h2>Album</h2>
@@ -621,8 +637,20 @@
             </section>
             <section id="section4">
                 <h2>Music Video</h2>
-                <iframe width="1080" height="608" src="https://www.youtube.com/embed/tzL4A8hyXc8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <hr/>
+                <p><span id="point1">현대인의 삶에 결여되어 있는 것이 ‘휴식’ 이라면, 매일매일이 홀리데이였으면 좋겠다라는 이야기는 터무니 없는 소리일까?</span></p>
+                <p><span id="point1">열아홉, 홀리데이 가사를 적어 내렸던 그 당시로 다시 돌아가보면 세상은 아직 이해할 수 없는 것들로 가득했다.</span></p>
+                <br/>
+                <p><span id="point2"><i>＃So!YoON!_데뷔_싱글_HOLIDAY</i></span></p>
+                <br/>
+                <p>“학교의 인턴 제도를 통해 사회생활이란 것을 처음 경험하면서 사람들이 주말이라는 것에 목을 매달며 ‘존버’하는 게 이해가 되지 않았다.</p>
+                <p>하루하루를 재미있게 살면 매일이 holiday가 아닐까? 하는 순수한(!) 마음에서 17세 때 만든 노래다.” - 황소윤</p>
+                <p>[HOLIDAY]는 So!YoON!이라는 이름으로 공식적으로 발표하는 첫 싱글이다. </p>
+                <p>앞으로 발표할 곡들 중에서 가장 오래 전에 만들어진 곡이면서 그만큼 개인적인 애정을 많이 갖고 있는 곡이긴 하지만</p> 
+                <p>단순히 이런 이유만으로 이 곡을 가장 먼저 선보이게 된 것은 아니다.</p>
+                <p>물론 이전 새소년의 곡들에서도 그녀의 목소리는 돋보였지만, 이번에는 러닝타임 전체를 압도할 정도로 대단한 존재감을 선보인다. </p>
+                <p>그리고 소울을 토대로 훵크, 일렉트로닉, 팝 등의 다양한 요소를 섞어낸 컨템포러리 R&B 스타일은 첫 시도임에도 불구하고, 늘 입었던 옷처럼 착 달라붙는다.</p>
+                <p>이런 점에서 [HOLIDAY]는 지금까지는 잊어버리고 완전히 새로운 캐릭터를 받아들일 준비를 하게 만드는데 가장 적절한 트랙이다.</p>
+                <br/>
                 <iframe width="1080" height="608" src="https://www.youtube.com/embed/pjjMgVxQOTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </section>
         </div>
