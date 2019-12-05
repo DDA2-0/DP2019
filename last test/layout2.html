@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout2</title>
+        <meta charset="utf-8" />
+        <style>
+            #header2{
+                background-color:#02918c;
+                color: white;
+                padding: 10px 50px;
+            }
+            #logo_back{
+                color:#cfc91d;
+            }
+            header>nav>ul>li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px;
+            }
+            .float_left{ float:left;}
+            .float_right{ float:right;}
+            .clear { clear:both; height:0; overflow:hidden;}
+            a:link{color: #ffffff;}    /* 기본 모습*/
+            a:visited{color: rgb(156, 236, 173);}  /* 방문 후 */
+            a:hover{color:rgb(255, 232, 98);} /*마우스 올림*/
+            #header{
+                background-color:#4b7543;
+                color: white;
+                padding: 20px 50px;
+                margin: 0px;
+            }
+            header>h1{
+                margin: 0px;
+            }
+            #main_visual{
+                /* height:600px; */
+                background-image: url("images/layout2_visual.jpg");
+                background-size: 100% auto; /* 가로 세로 */
+                background-size: cover; /*이거 개많이 씀*/
+                background-repeat: no-repeat;
+                /* repeat, no-repeat, repeat-x, repeat-y */
+                background-color: black;
+                background-position: 50% 50%; /*가로 세로*/
+
+                color: white; /* 상속 */
+                text-align: center;
+                padding: 100px 0px; /*상하좌우*/
+            }
+            #main_visual h2{
+                font-size: 40px;
+                font-weight: lighter;
+                letter-spacing: 15px;
+                margin: 5px;
+            }
+            #visual_title_top{
+                font-size: 20px;
+            }
+            #visual_title_bottom{
+                font-size: 15px;    
+            }
+            #main_visual img{
+                margin: 100px 0px 0px 0px /* 상 우 하 좌*/
+            }
+            section{
+                text-align: center;
+                /*padding: 0px 100px; /*상하 좌우 내부여백*/
+                display: block  ;
+            }
+            section h3{
+                color: #02918c;
+                font-size: 30px;
+                font-weight: normal;
+                margin: 80px 0px;
+            }
+            section p{
+                margin: 80px 0px;
+                padding: 0px 100px;
+            }
+            section #about_list{
+                padding: 0px 100px; /*상하 좌우*/   
+            }
+            section dd{
+                margin: 0px;
+            }
+            section>#about_list>li{
+                float: left;
+                width: 300px; /*고정값*/
+                width: 25%; /*가변값*/
+                width: calc(25% - (1px /4 * 3) - 40px - 40px); /*괄호 안 띄어쓰기 꼭 맞추기 */
+                list-style: none;
+
+                border-right: solid 1px #ccc;
+                padding: 40px;
+            }
+            section>#about_list>li:nth-child(4){
+                border: none; /* 맨 마지막에 들어가는 보더 제거해서 깔끔하게하자!*/
+            }
+            #work_list li{
+                float:left;
+                list-style: none;
+                width: 25%;
+                margin: 0px;
+                padding: 0px;
+            }
+            #work_list{
+                padding: 0px;
+            }
+            #work_list ul{
+                position: relative;
+                overflow: auto;
+                padding: 0px;
+            }
+            #work_list img{
+                width: 100%;
+                display: block; /*사진 뜨는거 해결*/
+            }
+            #wrap{
+                /*width: 1100px; */ /* 고정값 */
+                min-width: 1024px; /*최소 넓이 */
+                max-width: 1920px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            html{
+                scroll-behavior: smooth;
+            }
+            #logo_back1{
+                color:#9bca4e;
+            }
+            body{
+                position:relative;
+                overflow: auto;
+                padding: 0px;
+                margin: 0px;
+            }
+            nav>ul>li{
+                float:left;
+                list-style : none;
+                padding-right: 10px;
+                padding-right: 10px;
+            }
+
+            nav>ul{
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        </style>
+        <style type="text/css">
+            #footer{
+                background-color: black;
+                width:100%;
+                position:relative;
+                overflow: auto;
+                color:white;
+                padding-top:50px;
+                padding-bottom:50px;
+            }
+            #family_link{
+                float:right;
+            }
+            #family_link img{
+                width:30x;
+                height:30px;
+            }
+            #footer_util{
+                position:relative;
+                overflow: auto;
+                padding: 0px;
+                margin: 0px;
+            }
+            #footer_util li{
+                float:left;
+                list-style: none;
+                border-right: solid 2px #626262;
+                margin: 0px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #footer_util li:last-child{
+                border-style: none;
+            }
+            #family_link li{
+                float:left;
+                list-style: none;
+                margin: 5px;
+            }
+            #footer #copyright{
+                margin:10px;
+                float:left;
+            }
+            #footer #info{
+                margin-left:10px;
+                margin-right:10px;
+                margin-top:25px;
+                margin-bottom:25px;
+                float:left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header id="header">
+                <h1 class="float_left">
+                    <span id="logo_back1">SE </span><span>SO NEON</span>
+                    <!-- div span 의미없이 구획나누기 좋음-->
+                </h1>
+                <nav class="float_right">
+                    <ul>
+                        <li><a href="index.html">INDEX</a></li>
+                        <li><a href="main.html">MAIN</a></li>
+                        <li><a href="layout1.html">LAYOUT 1</a></li>
+                        <li><a href="layout2.html">LAYOUT 2</a></li>
+                        <li><a href="layout3.html">LAYOUT 3</a></li>
+                       <div class="clear"></div>
+                    </ul>
+                </nav>
+                <div class="clear"></div>
+            </header>
+        </div>
+        <div id="wrap">
+            <header id="header2">
+                <h1 class="float_left">
+                    <span>MY</span><span id="logo_back">FOLIO</span>
+                    <!-- div span 의미없이 구획나누기 좋음-->
+                </h1>
+                <nav class="float_right">
+                    <ul>
+                       <li>HOME</li>
+                        <li>ABOUT ME</li>
+                        <li>SERVICE</li>
+                        <li>MY WORK</li>
+                       <li>CONTACT ME</li>
+                       <div class="clear"></div>
+                    </ul>
+                </nav>
+                <div class="clear"></div>
+            </header>
+            <div id="main_visual">
+                <div id="visual_title_top">Lorem ipsum dolor sit iusmod tempor</div>
+                <h2>INCIDIDUNT BORE</h2>
+                <div id="visual_title_bottom">Orem ipsum dolor sit amet, consectetur</div>
+                <img src="images/layout2_button.jpg" />
+            </div>
+            <section>
+                <h3>ABOUT ME</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                    nisi ut aliquip ex ea commodo consequat duis aute irure dolor.
+                </p>
+                <ul id="about_list">
+                    <li>
+                        <img src="images/layout2_icon1.jpg" />
+                        <dl>
+                            <dt>Title goes here</dt>
+                            <dt>onsectetur adipisicing elit, 
+                                sedo eiusmod tempor incidi 
+                                et dolorerserss eerhfre mag.</dt>
+                        </dl>
+                    </li>
+                    <li>
+                            <img src="images/layout2_icon2.jpg" />
+                            <dl>
+                                <dt>Title goes here</dt>
+                                <dt>onsectetur adipisicing elit, 
+                                    sedo eiusmod tempor incidi 
+                                    et dolorerserss eerhfre mag.</dt>
+                            </dl>
+                    </li>
+                    <li>
+                            <img src="images/layout2_icon3.jpg" />
+                            <dl>
+                                <dt>Title goes here</dt>
+                                <dt>onsectetur adipisicing elit, 
+                                    sedo eiusmod tempor incidi 
+                                    et dolorerserss eerhfre mag.</dt>
+                            </dl>
+                    </li>
+                    <li>
+                            <img src="images/layout2_icon4.jpg" />
+                            <dl>
+                                <dt>Title goes here</dt>
+                                <dt>onsectetur adipisicing elit, 
+                                    sedo eiusmod tempor incidi 
+                                    et dolorerserss eerhfre mag.</dt>
+                            </dl>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </section>
+            <section>
+                <h3>MY WORKS</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                </p>
+                <ul id="work_list">
+                    <li><img src="images/layout2_pic1.jpg" /></li>
+                    <li><img src="images/layout2_pic2.jpg" /></li>
+                    <li><img src="images/layout2_pic3.jpg" /></li>
+                    <li><img src="images/layout2_pic4.jpg" /></li>
+                    <li><img src="images/layout2_pic5.jpg" /></li>
+                    <li><img src="images/layout2_pic6.jpg" /></li>
+                    <li><img src="images/layout2_pic7.jpg" /></li>
+                    <li><img src="images/layout2_pic8.jpg" /></li>
+                    <div class="clear"></div>
+                </ul>
+            </section>
+        </div>
+        <footer>
+            <div id="footer">
+                <ul id="footer_util">
+                    <li>Index</li>
+                    <li>Main</li>
+                    <li>Layout1</li>
+                    <li>Layout2</li>
+                    <li>Layout3</li>
+                </ul>
+                <div id="copyright">Copyright ⓒ Sesoneon. All Right Reserved.</div>
+                <div id="copyright">21961069 Lee Dayoung</div>
+            </div>
+        </footer>
+    </body>
+</html>

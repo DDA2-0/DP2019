@@ -1,0 +1,503 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <title>layout1</title>
+        <!-- euc-kr, utf-8 한글 인코딩!!!!-->
+        <meta charset="utf-8" />
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
+        <style>
+            html{
+                scroll-behavior: smooth;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            #wrap{
+                /*width: 1100px; */ /* 고정값 */
+                min-width: 1024px; /*최소 넓이 */
+                max-width: 1920px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            body{
+                position:relative;
+                overflow: auto;
+                padding: 0px;
+                margin: 0px;
+            }
+            section {
+                max-width: 1920px;
+                min-width: 1024px;
+                padding: 0px 0px;
+            }
+            header nav{
+                margin: 0px;
+                padding: 0px
+            }
+            a:link{color: #ffffff;}    /* 기본 모습*/
+            a:visited{color: rgb(156, 236, 173);}  /* 방문 후 */
+            a:hover{color:rgb(255, 232, 98);} /*마우스 올림*/
+            #header{
+                background-color:#4b7543;
+                color: white;
+                padding: 20px 50px;
+            }
+            header>nav>ul>li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px;
+            }
+            .float_left{ float:left;}
+            .float_right{ float:right;}
+            .clear { clear:both; height:0; overflow:hidden;}
+
+            #logo_back{
+                color:#9bca4e;
+            }
+            h1{
+                margin: 0px;
+            }
+            h2{
+                margin: 0px;
+                float: right;
+            }     
+            header>h1{
+                margin: 0px;
+            }
+            #point1{
+                font-weight: bold;
+                font-size: 14px;
+                color: rgb(243, 243, 243);
+            }
+            #td1{
+                padding: 0px 70px 0px 30px;
+            }
+        </style>
+        <style type="text/css">
+            #footer{
+                background-color: black;
+                width:100%;
+                position:relative;
+                overflow: auto;
+                color:white;
+                padding-top:50px;
+                padding-bottom:50px;
+            }
+            #family_link{
+                float:right;
+            }
+            #family_link img{
+                width:30x;
+                height:30px;
+            }
+            #footer_util{
+                position:relative;
+                overflow: auto;
+                padding: 0px;
+                margin: 0px;
+            }
+            #footer_util li{
+                float:left;
+                list-style: none;
+                border-right: solid 2px #626262;
+                margin: 0px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #footer_util li:last-child{
+                border-style: none;
+            }
+            #family_link li{
+                float:left;
+                list-style: none;
+                margin: 5px;
+            }
+            #footer #copyright{
+                margin:10px;
+                float:left;
+            }
+            #footer #info{
+                margin-left:10px;
+                margin-right:10px;
+                margin-top:25px;
+                margin-bottom:25px;
+                float:left;
+            }
+                        /* 쉼표 띄어쓰지 맙시다 웬만하면 */
+                        div,header,nav,footer,h1,ul,li{
+                /* margin:10px; /*바깥여백: 10px; */
+                /* border: solid 1px black; */
+                /* 경계선: 실선 1픽셀 두께 검은색; */
+            }
+            header{
+                padding: 30px; /*빈 공간에도 색이 채워졌음 좋겠어요는 패딩, 그냥 싹둑이면 마진*/
+            }
+            nav{
+                padding: 30px;
+            }
+            h1{
+                margin: 0px;
+            }
+            h2{
+                margin: 0px;
+                float: right;
+            }
+            header>ul{
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            #zoom{
+                margin: 9px;
+            }
+            /* header 안에 ul 안에 li 지칭 */
+            header>ul>li{
+                float:left; /*둥둥떠다닌다:왼쪽기준으로*/
+                list-style : none; /*리스트모양:없음*/
+                padding-right: 20px;
+                padding-left: 20px;
+                border-right: solid 2px gray;
+            }
+            /*li 5번째의 실선을 없애버린다*/
+            header>ul>li:nth-child(5){
+                border: none;
+            }
+            .clear { clear:both; height:0; overflow:hidden; }
+            .float_left{ float: left; } /* 공간이 넉넉하면 가로로 나열되지만 공간이 부족하면 후순위부터 내려가게 됨*/
+            .float_right{ float: right;}
+
+            nav>ul>li{
+                float:left;
+                list-style : none;
+                padding-right: 10px;
+                padding-right: 10px;
+            }
+
+            nav>ul{
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .container:nth-child(1){ background-color: #98f;}            
+            .container:nth-child(2){ background-color: #5d9;}
+            .container:nth-child(3){ background-color: #f76;}
+            .container:nth-child(4){ background-color: #ec5;}
+            .content_part{
+                float: left; /*둥둥떠다니게:왼쪽기준으로*/
+                width:480px;
+                margin: 10px;
+            }
+            .container>section>h3{
+                color: white;
+            }
+            .container dt{
+                font-weight:bold;
+                margin-top: 25px;
+                margin-right: 0px;
+                margin-bottom: 25px;
+                margin-left: 0px;
+                margin: 25px 0px; /* 상하값 좌우값*/
+                margin: 25px 0px 25px 0px; /* 상 우 하 좌 시계방향*/
+            }
+            .container dd{
+                margin: 25px 0px; /*바깥여백 : 없음*/
+            }
+            .container>section{
+                /* margin-left: 180px;*/
+                width:1000px;
+                margin-left: auto; /*바깥 여백 - 왼쪽 : 자동*/
+                margin-right: auto;
+            }
+            .container{
+                padding: 30px; /* 내부여백 30 */
+            }
+            #footer{
+                background-color: black;
+                width:100%;
+                position:relative;
+                overflow: auto;
+                color:white;
+                padding-top:50px;
+                padding-bottom:50px;
+            }
+            #footer_util{
+                position:relative;
+                overflow: auto;
+                padding: 0px;
+                margin: 0px;
+            }
+            #footer_util li{
+                float:left;
+                list-style: none;
+                border-right: solid 2px #626262;
+                margin: 0px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #footer_util li:last-child{
+                border-style: none;
+            }
+            #family_link li{
+                float:left;
+                list-style: none;
+                margin: 5px;
+            }
+            #footer #copyright{
+                margin:10px;
+                float:left;
+            }
+            #footer #info{
+                margin-left:10px;
+                margin-right:10px;
+                margin-top:25px;
+                margin-bottom:25px;
+                float:left;
+            }
+            #wrap{
+                /*width: 1100px; */ /* 고정값 */
+                min-width: 1024px; /*최소 넓이 */
+                max-width: 1920px;
+                margin-left: auto;
+                margin-right: auto;
+                html{
+                scroll-behavior: smooth;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            #wrap{
+                /*width: 1100px; */ /* 고정값 */
+                min-width: 1024px; /*최소 넓이 */
+                max-width: 1920px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            body{
+                position:relative;
+                overflow: auto;
+                padding: 0px;
+                margin: 0px;
+            }
+            section {
+                max-width: 1920px;
+                min-width: 1024px;
+                padding: 0px 0px;
+            }
+            header nav{
+                margin: 0px;
+                padding: 0px
+            }
+            #main_visual{
+                /* height:600px; */
+                background-image: url("images/Untitled-.jpg");
+                background-size: 100% 100%; /* 가로 세로 */
+                background-size: cover;
+                background-repeat: no-repeat;
+                /* repeat, no-repeat, repeat-x, repeat-y */
+                background-color: black;
+                /*background-position: 50% 50%; /*가로 세로*/
+
+                color: white; /* 상속 */
+                text-align: left;
+                /*margin:  -20px 0px 0px 0px;*/
+                padding: 0px 0px; /*상하좌우*/
+            }
+            a:link{color: #ffffff;}    /* 기본 모습*/
+            a:visited{color: rgb(156, 236, 173);}  /* 방문 후 */
+            a:hover{color:rgb(255, 232, 98);} /*마우스 올림*/
+
+            header>nav>ul>li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px;
+            }
+            .float_left{ float:left;}
+            .float_right{ float:right;}
+            .clear { clear:both; height:0; overflow:hidden;}
+
+            #logo_back{
+                color:#9bca4e;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header id="header">
+                <h1 class="float_left">
+                    <span id="logo_back">SE </span><span>SO NEON</span>
+                    <!-- div span 의미없이 구획나누기 좋음-->
+                </h1>
+                <nav class="float_right">
+                    <ul>
+                        <li><a href="index.html">INDEX</a></li>
+                        <li><a href="main.html">MAIN</a></li>
+                        <li><a href="layout1.html">LAYOUT 1</a></li>
+                        <li><a href="layout2.html">LAYOUT 2</a></li>
+                        <li><a href="layout3.html">LAYOUT 3</a></li>
+                       <div class="clear"></div>
+                    </ul>
+                </nav>
+                <div class="clear"></div>
+            </header>
+        </div>
+        <div id="wrap">
+          <header>
+              <h1 class="float_left">
+                  <img src="images/layout1_head_logo.jpg" />
+              </h1>
+              <ul class="float_left">
+                  <li>ABOUT</li>
+                  <li>SERVICES</li>
+                  <li>WORKS</li>
+                  <li>BLOG</li>
+                  <li>CONTACT US</li>
+                  <div class="clear"></div>
+                  <!-- 만병통치약 아님 아무데나 남발하지마셈-->
+              </ul>
+              <div id="zoom" class="float_right">
+                  <img src="images/layout1_head_zoom.jpg" />
+              </div>
+              <div class="clear"></div>
+          </header>
+          <nav>
+              <h2 class="float_left">
+                  See Our Works
+              </h2>
+              <ul class="float_right">
+                  <li>Web Design</li>
+                  <li>Icons</li>
+                  <li>Illustlations</li>
+                  <li>Misc</li>
+                  <div class="clear"></div> <!--문제를 발생시킨 아이들 맨뒤에 붙인다.-->
+              </ul>
+              <div class="clear"></div> <!--이유를 잘 파악하고 사용할 것-->
+          </nav>
+          <div>
+              <div class="container">
+                  <section>
+                      <h3>Web Design</h3>
+                      <div class="content_part">
+                            <img src="images/layout1_img1.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>
+                                Consectetur adipiscing elit. Suspendisse sed leo tellus.
+                                Praesent nec vehicula ligula, non laoreet ligula. Maecenas
+                                at massa eget orci porttitor semper.
+                                </dd>
+                            </dl>
+                      </div>
+                      <div class="content_part">
+                            <img src="images/layout1_img2.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>
+                                Consectetur adipiscing elit. Suspendisse sed leo tellus.
+                                Praesent nec vehicula ligula, non laoreet ligula. Maecenas
+                                at massa eget orci porttitor semper.
+                                </dd>
+                            </dl>
+                      </div>
+                      <div class="clear"></div>
+                  </section>
+              </div>
+              <div class="container">
+                    <section>
+                        <h3>Icons</h3>
+                        <div class="content_part">
+                              <img src="images/layout1_img3.jpg" />
+                              <dl>
+                                  <dt>Lorem ipsum dolor sit amet</dt>
+                                  <dd>
+                                  Consectetur adipiscing elit. Suspendisse sed leo tellus.
+                                  Praesent nec vehicula ligula, non laoreet ligula. Maecenas
+                                  at massa eget orci porttitor semper.
+                                  </dd>
+                              </dl>
+                        </div>
+                        <div class="content_part">
+                              <img src="images/layout1_img4.jpg" />
+                              <dl>
+                                  <dt>Lorem ipsum dolor sit amet</dt>
+                                  <dd>
+                                  Consectetur adipiscing elit. Suspendisse sed leo tellus.
+                                  Praesent nec vehicula ligula, non laoreet ligula. Maecenas
+                                  at massa eget orci porttitor semper.
+                                  </dd>
+                              </dl>
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+              </div>
+              <div class="container">
+                    <section>
+                        <h3>illustrations</h3>
+                        <div class="content_part">
+                              <img src="images/layout1_img5.jpg" />
+                              <dl>
+                                  <dt>Lorem ipsum dolor sit amet</dt>
+                                  <dd>
+                                  Consectetur adipiscing elit. Suspendisse sed leo tellus.
+                                  Praesent nec vehicula ligula, non laoreet ligula. Maecenas
+                                  at massa eget orci porttitor semper.
+                                  </dd>
+                              </dl>
+                        </div>
+                        <div class="content_part">
+                              <img src="images/layout1_img6.jpg" />
+                              <dl>
+                                  <dt>Lorem ipsum dolor sit amet</dt>
+                                  <dd>
+                                  Consectetur adipiscing elit. Suspendisse sed leo tellus.
+                                  Praesent nec vehicula ligula, non laoreet ligula. Maecenas
+                                  at massa eget orci porttitor semper.
+                                  </dd>
+                              </dl>
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+              </div>
+              <div class="container">
+                    <section>
+                        <h3>Miscellaneous</h3>
+                        <div class="content_part">
+                              <img src="images/layout1_img7.jpg" />
+                              <dl>
+                                  <dt>Lorem ipsum dolor sit amet</dt>
+                                  <dd>
+                                  Consectetur adipiscing elit. Suspendisse sed leo tellus.
+                                  Praesent nec vehicula ligula, non laoreet ligula. Maecenas
+                                  at massa eget orci porttitor semper.
+                                  </dd>
+                              </dl>
+                        </div>
+                        <div class="content_part">
+                              <img src="images/layout1_img8.jpg" />
+                              <dl>
+                                  <dt>Lorem ipsum dolor sit amet</dt>
+                                  <dd>
+                                  Consectetur adipiscing elit. Suspendisse sed leo tellus.
+                                  Praesent nec vehicula ligula, non laoreet ligula. Maecenas
+                                  at massa eget orci porttitor semper.
+                                  </dd>
+                              </dl>
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+              </div>
+          </div>
+        </div>
+        <footer>
+             <div id="footer">
+                 <ul id="footer_util">
+                    <li>Index</li>
+                    <li>Main</li>
+                    <li>Layout1</li>
+                    <li>Layout2</li>
+                    <li>Layout3</li>
+                </ul>
+                <div id="copyright">Copyright ⓒ Sesoneon. All Right Reserved.</div>
+                <div id="copyright">21961069 Lee Dayoung</div>
+            </div>
+        </footer>
+    </body>
+</html>

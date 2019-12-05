@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout3</title>
+        <meta charset="utf-8" />
+        <style>
+            #logo_back{
+                color:#cfc91d;
+            }
+            header>nav>ul>li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px;
+            }
+            .float_left{ float:left;}
+            .float_right{ float:right;}
+            .clear { clear:both; height:0; overflow:hidden;}
+            a:link{color: #ffffff;}    /* 기본 모습*/
+            a:visited{color: rgb(156, 236, 173);}  /* 방문 후 */
+            a:hover{color:rgb(255, 232, 98);} /*마우스 올림*/
+            #header{
+                background-color:#4b7543;
+                color: white;
+                padding: 20px 50px;
+                margin: 0px;
+            }
+            #header>h1{
+                margin: 0px;
+            }
+            #header2>h1{
+                margin:0px;
+                color: gray;
+                font-size: 60px;
+                font-weight: bold;
+            }
+            #visual_title_top{
+                font-size: 20px;
+            }
+            #visual_title_bottom{
+                font-size: 15px;    
+            }
+            #main_visual img{
+                margin: 100px 0px 0px 0px /* 상 우 하 좌*/
+            }
+            section{
+                text-align: center;
+                padding: 0px 100px; /*상하 좌우 내부여백*/
+            }
+            section h3{
+                color: #02918c;
+                font-size: 30px;
+                font-weight: normal;
+                margin: 80px 0px;
+            }
+            section p{
+                margin: 80px 0px;
+                padding: 0px 100px;
+            }
+            section #about_list{
+                padding: 0px 100px; /*상하 좌우*/   
+            }
+            section dd{
+                margin: 0px;
+            }
+            section>#about_list>li{
+                float: left;
+                width: 300px; /*고정값*/
+                width: 25%; /*가변값*/
+                width: calc(25% - (1px /4 * 3) - 40px - 40px); /*괄호 안 띄어쓰기 꼭 맞추기 */
+                list-style: none;
+
+                border-right: solid 1px #ccc;
+                padding: 40px;
+            }
+            section>#about_list>li:nth-child(4){
+                border: none; /* 맨 마지막에 들어가는 보더 제거해서 깔끔하게하자!*/
+            }
+            #work_list li{
+                float:left;
+                list-style: none;
+                width: 25%;
+            }
+            #work_list{
+                padding: 0px;
+            }
+            #work_list img{
+                width: 100%;
+                display: block; /*사진 뜨는거 해결*/
+            }
+            #wrap{
+                /*width: 1100px; */ /* 고정값 */
+                min-width: 1024px; /*최소 넓이 */
+                max-width: 1920px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #wrap2{
+                /*width: 1100px; */ /* 고정값 */
+                min-width: 1024px; /*최소 넓이 */
+                max-width: 1920px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 70px;
+            }
+            html{
+                scroll-behavior: smooth;
+            }
+            #logo_back1{
+                color:#9bca4e;
+            }
+            body{
+                position:relative;
+                overflow: auto;
+                padding: 0px;
+                margin: 0px;
+            }
+            nav>ul>li{
+                float:left;
+                list-style : none;
+                padding-right: 10px;
+                padding-right: 10px;
+            }
+
+            nav>ul{
+                margin-top: 10px;
+                margin-bottom: 10px;
+                display: block;
+                list-style-type: disc;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 40px;
+            }
+            body{
+            background-image: url("images/Layout3_back.jpg");
+            }
+            header li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px;
+                padding: 0px 20px 0px 0px;
+            }
+            header ul{
+                padding: 0px;
+            }
+            .clear { clear:both; height:0; overflow:hidden; }
+            .float_left{ float: left; } /* 공간이 넉넉하면 가로로 나열되지만 공간이 부족하면 후순위부터 내려가게 됨*/
+            .float_right{ float: right;}
+            .short_line{
+                border-bottom: solid 1px rgb(71, 67, 78);
+                width: 35px;
+            }
+            .short-line{
+                border-bottom: solid 1px gray;
+                width: 35px;
+                margin: 10px 0px;
+                display: block;
+                list-style-type: disc;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 40px;
+            }
+            .long-line{
+                border-bottom: solid 1px gray;
+                width: 70px;
+            }
+            .card{
+                background-color: white;
+                border-right: solid 1px gray;
+                border-bottom: solid 1px gray;
+                width: 310px;
+            }
+            .card dd{
+                margin: 0px;
+                font-size: 11px;
+            }
+            .card dt{
+                font-weight: bold;
+            }
+            .card .category{
+                background-color: black;
+                color: white;
+                /*width로 넓이 조절하지 않음*/
+                display: block; /*표시방식 : 블록*/
+                display: inline-block; /*인라인과 블록 절충*/
+                padding: 5px;
+                padding: 2px 5px 5px 5px;
+
+                position: static; /*위치 : 정적인 (기본형)*/
+                position: absolute; /*절대적인*/
+                bottom: 0px;
+                left: 0px;
+                /*top left right bottom*/
+            }
+            .visual{
+                position: static; /*옛 명령이라 무시됨*/
+                position: relative; /*관계형*/
+                /*relaive 부모는 absolute 자식의 기준점이 됨*/
+            }
+            .visual img{
+                display: inline-block; /*표시:인라인-블록*/
+                /*이 경우 소문자 pjgy등을 표시할 밑공간 필요*/
+                display: block;
+            }
+            .info{
+                padding:20px;
+            }
+            #contents li{
+                float:left;
+                list-style: none;
+                margin: 30px;
+            }
+        </style>
+        <style type="text/css">
+            #footer{
+                background-color: black;
+                width:100%;
+                position:relative;
+                overflow: auto;
+                color:white;
+                padding-top:50px;
+                padding-bottom:50px;
+            }
+            #family_link{
+                float:right;
+            }
+            #family_link img{
+                width:30x;
+                height:30px;
+            }
+            #footer_util{
+                position:relative;
+                overflow: auto;
+                padding: 0px;
+                margin: 0px;
+            }
+            #footer_util li{
+                float:left;
+                list-style: none;
+                border-right: solid 2px #626262;
+                margin: 0px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #footer_util li:last-child{
+                border-style: none;
+            }
+            #family_link li{
+                float:left;
+                list-style: none;
+                margin: 5px;
+            }
+            #footer #copyright{
+                margin:10px;
+                float:left;
+            }
+            #footer #info{
+                margin-left:10px;
+                margin-right:10px;
+                margin-top:25px;
+                margin-bottom:25px;
+                float:left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header id="header">
+                <h1 class="float_left">
+                    <span id="logo_back1">SE </span><span>SO NEON</span>
+                    <!-- div span 의미없이 구획나누기 좋음-->
+                </h1>
+                <nav class="float_right">
+                    <ul>
+                        <li><a href="index.html">INDEX</a></li>
+                        <li><a href="main.html">MAIN</a></li>
+                        <li><a href="layout1.html">LAYOUT 1</a></li>
+                        <li><a href="layout2.html">LAYOUT 2</a></li>
+                        <li><a href="layout3.html">LAYOUT 3</a></li>
+                       <div class="clear"></div>
+                    </ul>
+                </nav>
+                <div class="clear"></div>
+            </header>
+        </div>
+        <div id="wrap2">
+                <header id="header2"   >
+                    <h1>Gridly</h1>
+                    <div class="short-line"></div>
+                        <nav>
+                        <ul>
+                            <li>HOME</li>
+                            <li>digital designs</li>
+                            <li>web designs</li>
+                            <li>branding/identity</li>
+                            <li>about me</li>
+                            <li>contact</li>
+                            <div class="clear"></div>
+                        </ul>
+                    </nav>
+                    <div class="short-line"></div>
+                </header>
+                <div id="contents">
+                    <ul>
+                        <li class="card">
+                            <div class="visual">
+                            <img src="images/layout3_img1.jpg" />
+                            <div class="category">
+                                Photoshop design
+                            </div>
+                            </div>
+                            <div class="info">
+                                <dl>
+                                    <dt><strong> Colour Awards</strong></dt>
+                                    <dd>
+                                        <div class="data">12th October 2011</div>
+                                        <div class="long_line"></div>
+                                    <p>A direct mail kit that announces the Dulux
+                                        Colour Awards Competition has commenced.
+                                        A collection of posters showing the famous colours of history,
+                                        advertises you add your own colours to history.</p>
+                                <div class="long_line"></div>
+                                <div>read on →</div>
+                                </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="visual">
+                            <img src="images/layout3_img2.jpg" />
+                            <div class="category">
+                                Photoshop design
+                            </div>
+                            </div>
+                            <div class="info">
+                                <dl>
+                                    <dt><strong> Colour Awards</strong></dt>
+                                    <dd>
+                                        <div class="data">12th October 2011</div>
+                                        <div class="long_line"></div>
+                                    <p>A direct mail kit that announces the Dulux
+                                        Colour Awards Competition has commenced.
+                                        A collection of posters showing the famous colours of history,
+                                        advertises you add your own colours to history.</p>
+                                <div class="long_line"></div>
+                                <div>read on →</div>
+                                </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="visual">
+                            <img src="images/layout3_img3.jpg" />
+                            <div class="category">
+                                Photoshop design
+                            </div>
+                            </div>
+                            <div class="info">
+                                <dl>
+                                    <dt><strong> Colour Awards</strong></dt>
+                                    <dd>
+                                        <div class="data">12th October 2011</div>
+                                        <div class="long_line"></div>
+                                    <p>A direct mail kit that announces the Dulux
+                                        Colour Awards Competition has commenced.
+                                        A collection of posters showing the famous colours of history,
+                                        advertises you add your own colours to history.</p>
+                                <div class="long_line"></div>
+                                <div>read on →</div>
+                                </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="visual">
+                            <img src="images/layout3_img4.jpg" />
+                            <div class="category">
+                                Photoshop design
+                            </div>
+                            </div>
+                            <div class="info">
+                                <dl>
+                                    <dt><strong> Colour Awards</strong></dt>
+                                    <dd>
+                                        <div class="data">12th October 2011</div>
+                                        <div class="long_line"></div>
+                                    <p>A direct mail kit that announces the Dulux
+                                        Colour Awards Competition has commenced.
+                                        A collection of posters showing the famous colours of history,
+                                        advertises you add your own colours to history.</p>
+                                <div class="long_line"></div>
+                                <div>read on →</div>
+                                </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="visual">
+                            <img src="images/layout3_img5.jpg" />
+                            <div class="category">
+                                Photoshop design
+                            </div>
+                            </div>
+                            <div class="info">
+                                <dl>
+                                    <dt><strong> Colour Awards</strong></dt>
+                                    <dd>
+                                        <div class="data">12th October 2011</div>
+                                        <div class="long_line"></div>
+                                    <p>A direct mail kit that announces the Dulux
+                                        Colour Awards Competition has commenced.
+                                        A collection of posters showing the famous colours of history,
+                                        advertises you add your own colours to history.</p>
+                                <div class="long_line"></div>
+                                <div>read on →</div>
+                                </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="visual">
+                            <img src="images/layout3_img6.jpg" />
+                            <div class="category">
+                                Photoshop design
+                            </div>
+                            </div>
+                            <div class="info">
+                                <dl>
+                                    <dt><strong> Colour Awards</strong></dt>
+                                    <dd>
+                                        <div class="data">12th October 2011</div>
+                                        <div class="long_line"></div>
+                                    <p>A direct mail kit that announces the Dulux
+                                        Colour Awards Competition has commenced.
+                                        A collection of posters showing the famous colours of history,
+                                        advertises you add your own colours to history.</p>
+                                <div class="long_line"></div>
+                                <div>read on →</div>
+                                </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="visual">
+                            <img src="images/layout3_img7.jpg" />
+                            <div class="category">
+                                Photoshop design
+                            </div>
+                            </div>
+                            <div class="info">
+                                <dl>
+                                    <dt><strong> Colour Awards</strong></dt>
+                                    <dd>
+                                        <div class="data">12th October 2011</div>
+                                        <div class="long_line"></div>
+                                    <p>A direct mail kit that announces the Dulux
+                                        Colour Awards Competition has commenced.
+                                        A collection of posters showing the famous colours of history,
+                                        advertises you add your own colours to history.</p>
+                                <div class="long_line"></div>
+                                <div>read on →</div>
+                                </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="visual">
+                            <img src="images/layout3_img8.jpg" />
+                            <div class="category">
+                                Photoshop design
+                            </div>
+                            </div>
+                            <div class="info">
+                                <dl>
+                                    <dt><strong> Colour Awards</strong></dt>
+                                    <dd>
+                                        <div class="data">12th October 2011</div>
+                                        <div class="long_line"></div>
+                                    <p>A direct mail kit that announces the Dulux
+                                        Colour Awards Competition has commenced.
+                                        A collection of posters showing the famous colours of history,
+                                        advertises you add your own colours to history.</p>
+                                <div class="long_line"></div>
+                                <div>read on →</div>
+                                </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="visual">
+                            <img src="images/layout3_img9.jpg" />
+                            <div class="category">
+                                Photoshop design
+                            </div>
+                            </div>
+                            <div class="info">
+                                <dl>
+                                    <dt><strong> Colour Awards</strong></dt>
+                                    <dd>
+                                        <div class="data">12th October 2011</div>
+                                        <div class="long_line"></div>
+                                    <p>A direct mail kit that announces the Dulux
+                                        Colour Awards Competition has commenced.
+                                        A collection of posters showing the famous colours of history,
+                                        advertises you add your own colours to history.</p>
+                                <div class="long_line"></div>
+                                <div>read on →</div>
+                                </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="visual">
+                            <img src="images/layout3_img10.jpg" />
+                            <div class="category">
+                                Photoshop design
+                            </div>
+                            </div>
+                            <div class="info">
+                                <dl>
+                                    <dt><strong> Colour Awards</strong></dt>
+                                    <dd>
+                                        <div class="data">12th October 2011</div>
+                                        <div class="long_line"></div>
+                                    <p>A direct mail kit that announces the Dulux
+                                        Colour Awards Competition has commenced.
+                                        A collection of posters showing the famous colours of history,
+                                        advertises you add your own colours to history.</p>
+                                <div class="long_line"></div>
+                                <div>read on →</div>
+                                </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+        <footer>
+            <div id="footer">
+                <ul id="footer_util">
+                    <li>Index</li>
+                    <li>Main</li>
+                    <li>Layout1</li>
+                    <li>Layout2</li>
+                    <li>Layout3</li>
+                </ul>
+                <div id="copyright">Copyright ⓒ Sesoneon. All Right Reserved.</div>
+                <div id="copyright">21961069 Lee Dayoung</div>
+            </div>
+        </footer>
+    </body>
+</html>
