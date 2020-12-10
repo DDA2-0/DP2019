@@ -26,7 +26,7 @@
                 <div class="clear"></div>
             </header>
             <div id="wrap3">
-                <div id="app"></div>
+                <div id="text"></div>
             </div>
             <div id="main_visual">
                 <a href="main.html"><img src="images/Untitled-1-Recovered.png" style="max-width: 100%; height: auto;" /></a>
@@ -41,14 +41,14 @@
                 '지금 우리 앞의 가장 새로운 물결',
                 'Se So Neon'
             ];
-            var app = document.getElementById('app');
+            var txt = document.getElementById('text');
             var count = 0;
             var index = 0;
             var typingEffect = function typingEffect() {
                 var text = items[index];
                 if (count < text.length) {
                     setTimeout(function () {
-                        app.innerHTML += text[count];
+                        txt.innerHTML += text[count];
                         count++;
                         typingEffect();
                     }, Math.floor(Math.random(10) * 100));
@@ -56,7 +56,7 @@
                     count = 0;
                     index = index + 1 < items.length ? index + 1 : 0;
                     setTimeout(function () {
-                        app.innerHTML = '';
+                        txt.innerHTML = '';
                         typingEffect();
                     }, 1200);  //텍스트 체인지 시간
                 }
